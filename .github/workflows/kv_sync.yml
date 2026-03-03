@@ -1,0 +1,36 @@
+# .github/workflows/kv_sync.yml
+name: 3. Cloudflare KV 文件上传 (简化版)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 每天 4 次，在主工作流 (0分) 运行后 10 分钟运行
+    - cron: '10 */6 * * *' 
+
+jobs:
+  kv_sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 检出仓库代码
+        uses: actions/checkout@v4
+        
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      # 1. 运行 KV 简单上传脚本
+      - name: 运行 KV 简单上传脚本
+        run: python md/kv_upload_simple.py
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_KV_NAMESPACE_ID: ${{ secrets.CF_KV_NAMESPACE_ID }}
+          
+      # 🚨 移除 KV 清理步骤，该任务交给另一个工作流处理。
