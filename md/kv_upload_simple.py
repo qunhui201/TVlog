@@ -57,8 +57,10 @@ def upload_kv_files():
     # 定义要上传的文件和对应的 KV Key 名称
     uploads = [
         # 根目录固定文件 (覆盖)
-        ("demo_output.m3u", "latest_m3u"),
-        ("tvbox_output.txt", "latest_txt"),
+        ("demo_output.m3u", "latest.m3u"),
+        ("tvbox_output.txt", "latest.txt"),
+        ("final_hotel.m3u", "hotel.m3u"),
+        ("final_hotel.txt", "hotel.txt"),
         
         # 合并文件 (覆盖)
         ("history/merged.m3u", "history/merged.m3u"),
