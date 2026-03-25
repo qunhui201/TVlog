@@ -6231,6 +6231,10 @@ CGTN,http://ah2.sohu.blog:8000/hls/17/index.m3u8
 合肥科创,http://ah2.sohu.blog:8000/hls/20/index.m3u8
 肥西新闻综合,http://ah2.sohu.blog:8000/hls/21/index.m3u8
 
+60.174.86.121:5080,#genre#
+Q 亳州新闻,http://60.174.86.121:5080/hls/2/index.m3u8
+Q亳州农村,http://60.174.86.121:5080/hls/3/index.m3u8
+
 hmfs.f3322.net:3388,#genre#
 CCTV-1 综合,http://hmfs.f3322.net:3388/hls/1/index.m3u8
 CCTV -2财经高清,http://hmfs.f3322.net:3388/hls/2/index.m3u8
